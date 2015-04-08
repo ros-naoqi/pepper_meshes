@@ -34,7 +34,7 @@ file(DOWNLOAD
 else()
 message(STATUS "Downloading 32 bit installer")
 file(DOWNLOAD
-"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/naopepper-0.1.0-linux-installer.run"
+"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.1.0-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 41d2f3c8ee3fea0638de85f3f13803a7
