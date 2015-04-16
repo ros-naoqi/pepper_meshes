@@ -2,6 +2,11 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update to the latest version of the meshes
+* Contributors: Vincent Rabaud
+
 0.1.2 (2015-04-08)
 ------------------
 * fix typo
