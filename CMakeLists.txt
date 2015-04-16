@@ -26,18 +26,18 @@ endif()
 if (NOT ${IS_32})
 message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD
-"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.1.0-linux-x64-installer.run"
+"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.2.0-linux-x64-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 db6ee53d0fd37a23d9bbba5bb5d73608
+  EXPECTED_MD5 77dae217f4b169970ab9770bb7f5f653
 )
 else()
 message(STATUS "Downloading 32 bit installer")
 file(DOWNLOAD
-"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.1.0-linux-installer.run"
+"https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.2.0-linux-installer.run"
   ${INSTALLER_TMP_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
-  EXPECTED_MD5 41d2f3c8ee3fea0638de85f3f13803a7
+  EXPECTED_MD5 141a14d105b9c02c926bbc3b147f2ded
 )
 endif()
 
