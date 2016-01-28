@@ -2,8 +2,8 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.2 (2016-01-28)
+------------------
 * fixed folder names in CMakeLists
 * Contributors: Mikael Arguedas
 
