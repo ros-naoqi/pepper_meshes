@@ -43,7 +43,7 @@ endif()
 
 # specify the interesting folder in the archive. You might want to change
 # that for a new binary where the structure is different
-set(TMP_MESH_PATH ${TMP_DIR}/nao_meshes/)
+set(TMP_MESH_PATH ${TMP_DIR}/meshes/)
 
 # final path in devel/install space
 set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROJECT_NAME}/)
