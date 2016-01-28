@@ -3,7 +3,7 @@
   <version>0.2.2</version>
   <description>meshes for the Aldebaran Robotics Pepper</description>
   <author email="vincent.rabaud@gmail.com">Vincent Rabaud</author>
-  <maintainer email="vincent.rabaud@gmail.com">Vincent Rabaud</maintainer>
+  <maintainer email="mikael.arguedas@gmail.com">Mikael Arguedas</maintainer>
   <license>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License</license>
 
   <url>http://github.com/ros-naoqi/pepper_meshes/</url>
