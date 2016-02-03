@@ -2,8 +2,8 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.3 (2016-02-03)
+------------------
 * fixed install rule and flder path
 * Update package.xml
   added myself as a maintainer as requested by vrabaud
