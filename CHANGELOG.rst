@@ -2,6 +2,13 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed install rule and flder path
+* Update package.xml
+  added myself as a maintainer as requested by vrabaud
+* Contributors: Arguedas Mikael, Mikael Arguedas
+
 0.2.2 (2016-01-28)
 ------------------
 * fixed folder names in CMakeLists
