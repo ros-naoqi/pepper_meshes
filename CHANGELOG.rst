@@ -2,8 +2,8 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.4 (2020-01-08)
+------------------
 * add Maxime Busy as maintainer (`#6 <https://github.com/ros-naoqi/pepper_meshes/issues/6>`_)
 * update maintainers (`#4 <https://github.com/ros-naoqi/pepper_meshes/issues/4>`_)
 * Contributors: Maxime Busy, Mikael Arguedas
