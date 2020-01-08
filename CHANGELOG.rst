@@ -2,6 +2,12 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add Maxime Busy as maintainer (`#6 <https://github.com/ros-naoqi/pepper_meshes/issues/6>`_)
+* update maintainers (`#4 <https://github.com/ros-naoqi/pepper_meshes/issues/4>`_)
+* Contributors: Maxime Busy, Mikael Arguedas
+
 0.2.3 (2016-02-03)
 ------------------
 * fixed install rule and flder path
