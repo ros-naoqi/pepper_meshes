@@ -2,6 +2,11 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update ERROR_FILE to ERROR_FILE_CMD in CMakeLists to avoid build crash
+* Contributors: mbusy
+
 0.2.4 (2020-01-08)
 ------------------
 * add Maxime Busy as maintainer (`#6 <https://github.com/ros-naoqi/pepper_meshes/issues/6>`_)
