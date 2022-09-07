@@ -90,11 +90,11 @@ message(STATUS \"ls result: \${RESULT_LS}\")
 
 execute_process(COMMAND file ${TMP_DIR}/installer.run
                 OUTPUT_VARIABLE OUT_FILE
-                ERROR_VARIABLE ERROR_FILE
+                ERROR_VARIABLE ERROR_FILE_CMD
                 RESULT_VARIABLE RESULT_FILE
 )
 message(STATUS \"file out: \${OUT_FILE}\")
-message(STATUS \"file error: \${ERROR_FILE}\")
+message(STATUS \"file error: \${ERROR_FILE_CMD}\")
 message(STATUS \"file result: \${RESULT_FILE}\")
 "
 )
