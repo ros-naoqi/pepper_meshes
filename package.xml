@@ -1,6 +1,6 @@
 <package>
   <name>pepper_meshes</name>
-  <version>0.2.4</version>
+  <version>0.2.5</version>
   <description>meshes for the Aldebaran Robotics Pepper</description>
   <author email="vincent.rabaud@gmail.com">Vincent Rabaud</author>
   <author email="mikael.arguedas@gmail.com">Mikael Arguedas</author>

@@ -2,8 +2,8 @@
 Changelog for package pepper_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.5 (2022-09-07)
+------------------
 * Update ERROR_FILE to ERROR_FILE_CMD in CMakeLists to avoid build crash
 * Contributors: mbusy
 
