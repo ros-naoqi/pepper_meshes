@@ -1,18 +1,17 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(pepper_meshes)
 
-find_package(catkin)
-catkin_package()
+find_package(ament_cmake REQUIRED)
 
 # When getting a new binay, the MD5 might change, and the folder hierarchy too
 # read comments below to adapt
 
-set(TMP_DIR ${CATKIN_DEVEL_PREFIX}/tmp)
+set(TMP_DIR ${CMAKE_CURRENT_BINARY_DIR}/tmp)
 
-set(INSTALLER_TMP_PATH ${TMP_DIR}/tmp/installer.run)
+set(INSTALLER_PATH ${TMP_DIR}/tmp/installer.run)
 
 # Try to figure out the architecture
-string(FIND ${CATKIN_DEVEL_PREFIX} "i686" IS_32)
+string(FIND ${CMAKE_CURRENT_BINARY_DIR} "i686" IS_32)
 message(STATUS "Architecture is apparently 32 (-1 for no): ${IS_32}")
 if(${IS_32} STREQUAL "-1")
 # Trust CMAKE_SYSTEM_PROCESSOR which does not work on the farm
@@ -27,15 +26,16 @@ if (NOT ${IS_32})
 message(STATUS "Downloading 64 bit installer")
 file(DOWNLOAD
 "https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.2.0-linux-x64-installer.run"
-  ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  ${INSTALLER_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 9e78f24b52838e704210881f92c0983d
 )
 else()
+
 message(STATUS "Downloading 32 bit installer")
 file(DOWNLOAD
 "https://github.com/ros-naoqi/pepper_meshes_installer/raw/master/peppermeshes-0.2.0-linux-installer.run"
-  ${INSTALLER_TMP_PATH} SHOW_PROGRESS
+  ${INSTALLER_PATH} SHOW_PROGRESS
   INACTIVITY_TIMEOUT 60
   EXPECTED_MD5 f48a610633d2db48bc84db16f4847b70
 )
@@ -45,23 +45,15 @@ endif()
 # that for a new binary where the structure is different
 set(TMP_MESH_PATH ${TMP_DIR}/meshes)
 
-# final path in devel/install space
-set(FINAL_MESH_PATH ${CATKIN_GLOBAL_SHARE_DESTINATION}/${PROJECT_NAME}/)
+# Where to install the meshes and textures
+# relative to the share folder of the package.
+set(INSTALL_DESTINATION_IN_SHARE ${PROJECT_NAME})
 
-# make the file executable to install
-file(COPY ${INSTALLER_TMP_PATH}
-     FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-     DESTINATION ${TMP_DIR}
-)
-
-set(INSTALLER_PATH ${TMP_DIR}/installer.run)
-
-# add a target for devel space
-add_custom_target(${PROJECT_NAME}_meshes
-  COMMAND ${INSTALLER_PATH} --mode text --prefix ${TMP_DIR}
-  COMMAND mkdir -p ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}
-  COMMAND cp -fr ${TMP_MESH_PATH} ${CATKIN_DEVEL_PREFIX}/${FINAL_MESH_PATH}/
-  COMMAND rm -fr ${TMP_DIR}/rollback*
+# install the meshes in the build directory when building
+message(STATUS "Unpacking meshes from the installer: \n${INSTALLER_PATH} --mode unattended --prefix ${TMP_DIR}")
+add_custom_target(install_meshes ALL
+  COMMAND chmod +x ${INSTALLER_PATH}
+  COMMAND ${INSTALLER_PATH} --mode unattended --prefix ${TMP_DIR}
 )
 
 # uncompress the meshes during install
@@ -101,5 +93,7 @@ message(STATUS \"file result: \${RESULT_FILE}\")
 
 # install the archive
 install(DIRECTORY ${TMP_MESH_PATH}
-        DESTINATION ${FINAL_MESH_PATH}/
+        DESTINATION share/${PROJECT_NAME}
 )
+
+ament_package()
