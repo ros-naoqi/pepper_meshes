@@ -36,10 +36,10 @@ set(TMP_MESH_PATH ${TMP_DIR}/meshes)
 set(INSTALL_DESTINATION_IN_SHARE ${PROJECT_NAME})
 
 # install the meshes in the build directory when building
-message(STATUS "Will unpack meshes from the installer: \n${INSTALLER_PATH} --prefix ${TMP_DIR}")
+message(STATUS "Will unpack meshes from the installer: \n${INSTALLER_PATH} --prefix ${TMP_DIR} ${INSTALL_MODE_FLAG}")
 add_custom_target(install_meshes ALL
   COMMAND chmod +x ${INSTALLER_PATH}
-  COMMAND ${INSTALLER_PATH} --prefix ${TMP_DIR}
+  COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/install_with_auto_mode.sh ${INSTALLER_PATH} --prefix ${TMP_DIR}
   BYPRODUCTS ${TMP_MESH_PATH}
   TERMINAL
 )
